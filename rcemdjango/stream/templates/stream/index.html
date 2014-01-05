@@ -1,9 +1,12 @@
-{% if latest_message_list %}
-    <ul>
-    {% for message in latest_message_list %}
-        <li><a href="/stream/{{ message.id }}/">{{ message.texte}}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No messages are available.</p>
-{% endif %}
+{% extends 'layout.html' %}
+{% block content %}
+    {% if latest_message_list %}
+        <ul>
+        {% for message in latest_message_list %}
+            <li><a href="/stream/{{ message.id }}/">{{ message.texte}}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No messages are available.</p>
+    {% endif %}
+ {% endblock %}
