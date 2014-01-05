@@ -2,6 +2,7 @@
 {% block content %}
     <section class="poster">
         <form action="/stream/message/add" method="POST">
+            {% csrf_token %}
             <textarea name="message" id="message" cols="30" rows="10"></textarea>
             <button>Submit</button>
         </form>
